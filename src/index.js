@@ -9,7 +9,7 @@ module.exports = function solveSudoku(matrix) {
 function solveSudokuByBacktracking(matrix){
   var rowCol = [0, 0];
 
-  //if empty  location wasn't found then we are done
+  //if empty  location wasn't found then sukodu is solved
   if(!findEmptyLocation(matrix, rowCol)) return true; 
 
   var row = rowCol[0], col = rowCol[1];
@@ -32,7 +32,7 @@ function solveSudokuByBacktracking(matrix){
     return false;
 }
 
-//if location was found assign this locatin to rowCol and return true, else reutrn false
+//if location empty location was found return true, else return false
 function findEmptyLocation(matrix, rowCol){
   for(var row = rowCol[0]; row < matrix.length; row++){
     for(var col = rowCol[1]; col < matrix[row].length; col++){
